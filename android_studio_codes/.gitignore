@@ -1,0 +1,70 @@
+# ============================================
+# 🔐 FICHIERS SECRETS — NE JAMAIS UPLOADER
+# ============================================
+google-services.json
+*.keystore
+*.jks
+local.properties
+.env
+.env.local
+secrets.properties
+apikeys.properties
+
+# ============================================
+# ANDROID BUILD
+# ============================================
+*.iml
+.gradle/
+local.properties
+.idea/
+.DS_Store
+build/
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# ============================================
+# ANDROID STUDIO
+# ============================================
+*.iws
+*.ipr
+out/
+gen/
+.navigation/
+timing.json
+captures/
+ovr_env.sh
+
+# ============================================
+# KOTLIN / JAVA
+# ============================================
+*.class
+*.log
+*.pyc
+
+# ============================================
+# GRADLE
+# ============================================
+.gradle
+**/build/
+!src/**/build/
+gradle-wrapper.jar
+.gradletasknamecache
+
+# ============================================
+# FIREBASE
+# ============================================
+# google-services.json déjà au-dessus
+firebase-debug.log
+.firebase/
+
+# ============================================
+# SYSTEME
+# ============================================
+.DS_Store
+Thumbs.db
+desktop.ini
