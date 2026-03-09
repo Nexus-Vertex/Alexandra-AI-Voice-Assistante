@@ -21,9 +21,9 @@
 
 ## 💻 Dashboard Screenshots
 
-<img src="https://github.com/Nexus-Vertex/Alexandra-AI-Voice-Assistante/main/screenshots/dashboard/admin.jpg" width="400">
+![Dashboard](screenshots/dashboard/dashboard.png)https://github.com/Nexus-Vertex/Alexandra-AI-Voice-Assistante/blob/main/screenshots/%20dashboard/admin.jpg
 
-<img src="https://raw.githubusercontent.com/Nexus-Vertex/Alexandra-AI-Voice-Assistante/main/screenshots/dashboard/user.png" width="400">
+<img src="https://github.com/Nexus-Vertex/Alexandra-AI-Voice-Assistante/blob/main/screenshots/%20dashboard/admin.jpg" width="400">
 
 <img src="https://raw.githubusercontent.com/Nexus-Vertex/Alexandra-AI-Voice-Assistante/main/screenshots/dashboard/login.png" width="400">
 
