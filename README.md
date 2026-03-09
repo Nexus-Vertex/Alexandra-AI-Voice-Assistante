@@ -11,7 +11,7 @@
 
 | Home Screen | Chat Screen | Voice Screen |
 |-------------|-------------|--------------|
-| ![Home](screenshots/app/home.png) | ![Chat](screenshots/app/chat.png) | ![Voice](screenshots/app/voice.png) |
+| ![Home](screenshots/app/home.png)<img src="https://github.com/Nexus-Vertex/Alexandra-AI-Voice-Assistante/blob/main/screenshots/%20dashboard/admin.jpg" width="400"> | ![Chat](screenshots/app/chat.png) | ![Voice](screenshots/app/voice.png) |
 
 | Reminders Screen | Notifications Screen | Profile Screen |
 |------------------|----------------------|----------------|
