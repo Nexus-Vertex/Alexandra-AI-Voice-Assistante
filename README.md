@@ -69,24 +69,24 @@ The project also includes a web dashboard for admin and user management.
 ```
 Alexandra-AI-Voice-Assistante/
 │
-├── android_studio_codes/       # Mobile app source code
+├── android_studio_codes/       
 │   ├── app/
 │   │   └── src/main/
-│   │       ├── java/           # Kotlin & Java code
+│   │       ├── java/           
 │   │       ├── res/
-│   │       │   ├── layout/     # XML screen layouts
-│   │       │   ├── drawable/   # Images & icons
-│   │       │   └── values/     # Colors, strings, styles
+│   │       │   ├── layout/     
+│   │       │   ├── drawable/  
+│   │       │   └── values/     
 │   │       └── AndroidManifest.xml
 │   ├── build.gradle.kts
 │   └── settings.gradle.kts
 │
-├── dashboard_pages/            # Web dashboard
-│   ├── dashboard-admin.html    # Admin panel
-│   ├── dashboard-user.html     # User panel
-│   └── login.html              # Login page
+├── dashboard_pages/            
+│   ├── dashboard-admin.html    
+│   ├── dashboard-user.html     
+│   └── login.html              
 │
-├── screenshots/                # Add your screenshots here
+├── screenshots/                
 │   ├── app/
 │   └── dashboard/
 │
