@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Ombre douce derrière -->
+    <item
+        android:left="4dp"
+        android:top="4dp"
+        android:right="4dp"
+        android:bottom="0dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#33000000" />
+            <corners android:radius="28dp" />
+        </shape>
+    </item>
+    <!-- Fond glass -->
+    <item android:bottom="4dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#AA111640" />
+            <corners android:radius="28dp" />
+            <stroke android:width="1dp" android:color="#55AAAAFF" />
+        </shape>
+    </item>
+</layer-list>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Lueur violette gauche -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#00000000"
+                android:centerColor="#3B1F7A33"
+                android:endColor="#00000000"
+                android:angle="135"
+                android:type="linear"/>
+        </shape>
+    </item>
+
+    <!-- Lueur violette droite -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#00000000"
+                android:centerColor="#4C1D9533"
+                android:endColor="#00000000"
+                android:angle="45"
+                android:type="linear"/>
+        </shape>
+    </item>
+
+    <!-- Lueur centrale -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#00000000"
+                android:endColor="#5B21B622"
+                android:angle="270"
+                android:type="linear"/>
+        </shape>
+    </item>
+
+</layer-list>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Fond sombre base -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#050A18"/>
+        </shape>
+    </item>
+
+    <!-- Point étoile 1 -->
+    <item android:left="40dp" android:top="80dp" android:right="740dp" android:bottom="700dp">
+        <shape android:shape="oval">
+            <solid android:color="#FFFFFF"/>
+        </shape>
+    </item>
+
+    <!-- Point étoile 2 -->
+    <item android:left="120dp" android:top="200dp" android:right="674dp" android:bottom="580dp">
+        <shape android:shape="oval">
+            <solid android:color="#A78BFA"/>
+        </shape>
+    </item>
+
+    <!-- Point étoile 3 -->
+    <item android:left="280dp" android:top="50dp" android:right="514dp" android:bottom="728dp">
+        <shape android:shape="oval">
+            <solid android:color="#FFFFFF"/>
+        </shape>
+    </item>
+
+    <!-- Point étoile 4 -->
+    <item android:left="600dp" android:top="120dp" android:right="194dp" android:bottom="658dp">
+        <shape android:shape="oval">
+            <solid android:color="#818CF8"/>
+        </shape>
+    </item>
+
+    <!-- Point étoile 5 -->
+    <item android:left="700dp" android:top="300dp" android:right="94dp" android:bottom="478dp">
+        <shape android:shape="oval">
+            <solid android:color="#FFFFFF"/>
+        </shape>
+    </item>
+
+    <!-- Point étoile 6 -->
+    <item android:left="50dp" android:top="500dp" android:right="734dp" android:bottom="278dp">
+        <shape android:shape="oval">
+            <solid android:color="#C4B5FD"/>
+        </shape>
+    </item>
+
+    <!-- Point étoile 7 -->
+    <item android:left="350dp" android:top="650dp" android:right="444dp" android:bottom="128dp">
+        <shape android:shape="oval">
+            <solid android:color="#FFFFFF"/>
+        </shape>
+    </item>
+
+    <!-- Point étoile 8 -->
+    <item android:left="650dp" android:top="600dp" android:right="144dp" android:bottom="178dp">
+        <shape android:shape="oval">
+            <solid android:color="#A78BFA"/>
+        </shape>
+    </item>
+
+</layer-list>

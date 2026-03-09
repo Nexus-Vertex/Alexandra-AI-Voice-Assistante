@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- Fond bleu arrondi -->
+    <path
+        android:pathData="M8,4 L40,4 Q44,4 44,8 L44,40 Q44,44 40,44 L8,44 Q4,44 4,40 L4,8 Q4,4 8,4 Z"
+        android:fillColor="#3B82F6"/>
+
+    <!-- Boîte carton — bas -->
+    <path
+        android:pathData="M10,26 L24,32 L38,26 L38,38 Q38,40 36,40 L12,40 Q10,40 10,38 Z"
+        android:fillColor="#1D4ED8"/>
+
+    <!-- Boîte carton — côté droit -->
+    <path
+        android:pathData="M24,32 L38,26 L38,38 Q38,40 36,40 L24,40 Z"
+        android:fillColor="#1E40AF"/>
+
+    <!-- Boîte carton — dessus ouvert -->
+    <path
+        android:pathData="M10,18 L24,24 L38,18 L24,12 Z"
+        android:fillColor="#60A5FA"/>
+
+    <!-- Rabat gauche ouvert -->
+    <path
+        android:pathData="M10,18 L10,26 L24,32 L24,24 Z"
+        android:fillColor="#3B82F6"/>
+
+    <!-- Rabat droit ouvert -->
+    <path
+        android:pathData="M38,18 L38,26 L24,32 L24,24 Z"
+        android:fillColor="#2563EB"/>
+
+    <!-- Ligne centre dessus -->
+    <path
+        android:pathData="M24,12 L24,24"
+        android:strokeColor="#93C5FD"
+        android:strokeWidth="1"
+        android:fillColor="#00000000"/>
+
+    <!-- Étoile/brillance en haut à droite -->
+    <path
+        android:pathData="M36,10 L37,13 L40,14 L37,15 L36,18 L35,15 L32,14 L35,13 Z"
+        android:fillColor="#FFFFFF"
+        android:fillAlpha="0.8"/>
+
+</vector>

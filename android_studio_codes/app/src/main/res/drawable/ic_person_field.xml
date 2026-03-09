@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="22dp"
+    android:height="22dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Tête (cercle via path) -->
+    <path
+        android:pathData="M12,4 m-4,0 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0"
+        android:fillColor="#00000000"
+        android:strokeColor="#7C3AED"
+        android:strokeWidth="1.8"/>
+
+    <!-- Corps / épaules -->
+    <path
+        android:pathData="M4,21 Q4,14 12,14 Q20,14 20,21"
+        android:fillColor="#00000000"
+        android:strokeColor="#7C3AED"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"/>
+
+</vector>

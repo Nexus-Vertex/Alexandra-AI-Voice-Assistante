@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/bg_btn_selection.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#22BB86FC" />
+    <stroke android:width="1dp" android:color="#55BB86FC" />
+    <corners android:radius="18dp" />
+</shape>
