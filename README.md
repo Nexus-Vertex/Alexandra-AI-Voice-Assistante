@@ -23,7 +23,7 @@
 
 | Admin Dashboard | User Dashboard | Login Page |
 |-----------------|----------------|------------|
-| ![Admin](screenshots/dashboard/admin.png) | ![User](screenshots/dashboard/user.png) | ![Login](screenshots/dashboard/login.png) |
+| ![Admin](screenshots/dashboard/admin.jpg) | ![User](screenshots/dashboard/user.png) | ![Login](screenshots/dashboard/login.png) |
 
 ---
 
