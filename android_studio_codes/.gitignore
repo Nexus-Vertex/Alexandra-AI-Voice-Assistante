@@ -1,6 +1,4 @@
-# ============================================
-# 🔐 FICHIERS SECRETS — NE JAMAIS UPLOADER
-# ============================================
+
 google-services.json
 *.keystore
 *.jks
@@ -10,9 +8,7 @@ local.properties
 secrets.properties
 apikeys.properties
 
-# ============================================
-# ANDROID BUILD
-# ============================================
+
 *.iml
 .gradle/
 local.properties
@@ -27,9 +23,7 @@ captures/
 *.ap_
 *.dex
 
-# ============================================
-# ANDROID STUDIO
-# ============================================
+
 *.iws
 *.ipr
 out/
@@ -39,32 +33,24 @@ timing.json
 captures/
 ovr_env.sh
 
-# ============================================
-# KOTLIN / JAVA
-# ============================================
+
 *.class
 *.log
 *.pyc
 
-# ============================================
-# GRADLE
-# ============================================
+
 .gradle
 **/build/
 !src/**/build/
 gradle-wrapper.jar
 .gradletasknamecache
 
-# ============================================
-# FIREBASE
-# ============================================
+
 # google-services.json déjà au-dessus
 firebase-debug.log
 .firebase/
 
-# ============================================
-# SYSTEME
-# ============================================
+
 .DS_Store
 Thumbs.db
 desktop.ini
