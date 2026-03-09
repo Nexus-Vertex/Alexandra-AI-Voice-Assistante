@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/conteneurItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingHorizontal="12dp"
+    android:paddingVertical="14dp"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/bg_item_historique">
+
+    <!-- Numéro -->
+    <TextView
+        android:id="@+id/tvNumero"
+        android:layout_width="36dp"
+        android:layout_height="wrap_content"
+        android:textColor="#BB86FC"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:gravity="center" />
+
+    <!-- Texte commande -->
+    <TextView
+        android:id="@+id/tvCommande"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="#EEEEFF"
+        android:textSize="14sp"
+        android:lineSpacingMultiplier="1.3"
+        android:layout_marginStart="4dp" />
+
+    <!-- Checkbox (visible uniquement en mode sélection) -->
+    <CheckBox
+        android:id="@+id/checkBoxItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:visibility="gone"
+        android:buttonTint="#BB86FC"
+        android:clickable="false"
+        android:focusable="false" />
+
+</LinearLayout>

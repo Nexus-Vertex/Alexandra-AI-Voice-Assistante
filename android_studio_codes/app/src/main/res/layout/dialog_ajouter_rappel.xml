@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="#0d1b4b">
+
+    <!-- Titre -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🔔 Nouveau Rappel"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#e879f9"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Message -->
+    <EditText
+        android:id="@+id/etMessageRappel"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Ex: Appeler le médecin..."
+        android:textColorHint="#666"
+        android:textColor="#ffffff"
+        android:textSize="14sp"
+        android:paddingHorizontal="14dp"
+        android:background="#1a2a6c"
+        android:inputType="text"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- Date + Heure sur une ligne -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="4dp">
+
+        <!-- DATE -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginEnd="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📅 Date"
+                android:textSize="11sp"
+                android:textColor="#9b6fd4"
+                android:layout_marginBottom="4dp"/>
+
+            <DatePicker
+                android:id="@+id/datePickerRappel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:calendarViewShown="false"
+                android:datePickerMode="spinner"
+                android:scaleX="0.85"
+                android:scaleY="0.85"
+                android:transformPivotX="0dp"/>
+
+        </LinearLayout>
+
+        <!-- HEURE -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⏰ Heure"
+                android:textSize="11sp"
+                android:textColor="#9b6fd4"
+                android:layout_marginBottom="4dp"/>
+
+            <TimePicker
+                android:id="@+id/timePickerRappel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:timePickerMode="spinner"
+                android:scaleX="0.85"
+                android:scaleY="0.85"
+                android:transformPivotX="0dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

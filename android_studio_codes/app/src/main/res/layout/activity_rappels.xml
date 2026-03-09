@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_deep">
+
+    <!-- Fond dégradé animé -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_rappels_gradient"/>
+
+    <!-- Contenu principal scrollable -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="90dp"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- ── HEADER ── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="20dp"
+                android:paddingBottom="8dp">
+
+                <ImageButton
+                    android:id="@+id/btnBackRappels"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:background="@drawable/bg_btn_back"
+                    android:src="@drawable/ic_arrow_back"
+                    android:contentDescription="Retour"
+                    android:tint="@color/text_main"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MES RAPPELS"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.05"
+                        android:background="@drawable/gradient_text_mask"
+                        android:textColor="@color/pink_soft"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gérés par Alexandra"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_muted"
+                        android:layout_marginTop="2dp"/>
+
+                </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/btnAddRappel"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:background="@drawable/bg_btn_add"
+                    android:src="@android:drawable/ic_input_add"
+                    android:tint="@color/white"
+                    android:contentDescription="Ajouter rappel"/>
+
+            </LinearLayout>
+
+            <!-- ── STATS ── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="20dp"
+                android:paddingBottom="4dp">
+
+                <!-- À venir -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_stat_chip"
+                    android:padding="12dp"
+                    android:layout_marginEnd="5dp">
+                    <TextView
+                        android:id="@+id/tvStatAVenir"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/pink"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="À VENIR"
+                        android:textSize="9sp"
+                        android:textColor="@color/text_muted"
+                        android:letterSpacing="0.05"
+                        android:layout_marginTop="2dp"/>
+                </LinearLayout>
+
+                <!-- Aujourd'hui -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_stat_chip"
+                    android:padding="12dp"
+                    android:layout_marginEnd="5dp">
+                    <TextView
+                        android:id="@+id/tvStatAujourdhui"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/pink"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="AUJOURD&apos;HUI"
+                        android:textSize="9sp"
+                        android:textColor="@color/text_muted"
+                        android:letterSpacing="0.05"
+                        android:layout_marginTop="2dp"/>
+                </LinearLayout>
+
+                <!-- Urgent -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_stat_chip"
+                    android:padding="12dp"
+                    android:layout_marginEnd="5dp">
+                    <TextView
+                        android:id="@+id/tvStatUrgent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/orange"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="URGENT"
+                        android:textSize="9sp"
+                        android:textColor="@color/text_muted"
+                        android:letterSpacing="0.05"
+                        android:layout_marginTop="2dp"/>
+                </LinearLayout>
+
+                <!-- Total -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_stat_chip"
+                    android:padding="12dp">
+                    <TextView
+                        android:id="@+id/tvStatTotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/purple_1"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TOTAL"
+                        android:textSize="9sp"
+                        android:textColor="@color/text_muted"
+                        android:letterSpacing="0.05"
+                        android:layout_marginTop="2dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- ── FILTRES ── -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:paddingHorizontal="20dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/btnFiltreAll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:text="Tous"
+                        android:gravity="center"
+                        android:paddingHorizontal="16dp"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/bg_filtre_btn"
+                        android:textColor="@color/selector_filtre_text"
+                        android:layout_marginEnd="8dp"/>
+
+                    <TextView
+                        android:id="@+id/btnFiltreUrgent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:text="🔥 Urgent"
+                        android:gravity="center"
+                        android:paddingHorizontal="16dp"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/bg_filtre_btn"
+                        android:textColor="@color/selector_filtre_text"
+                        android:layout_marginEnd="8dp"/>
+
+                    <TextView
+                        android:id="@+id/btnFiltreToday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:text="📅 Aujourd&apos;hui"
+                        android:gravity="center"
+                        android:paddingHorizontal="16dp"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/bg_filtre_btn"
+                        android:textColor="@color/selector_filtre_text"
+                        android:layout_marginEnd="8dp"/>
+
+                    <TextView
+                        android:id="@+id/btnFiltreUpcoming"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:text="⏳ À venir"
+                        android:gravity="center"
+                        android:paddingHorizontal="16dp"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/bg_filtre_btn"
+                        android:textColor="@color/selector_filtre_text"
+                        android:layout_marginEnd="8dp"/>
+
+                    <TextView
+                        android:id="@+id/btnFiltreDone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:text="✅ Terminés"
+                        android:gravity="center"
+                        android:paddingHorizontal="16dp"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/bg_filtre_btn"
+                        android:textColor="@color/selector_filtre_text"/>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <!-- ── LISTE RAPPELS ── -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerRappels"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp"
+                android:paddingTop="8dp"
+                android:nestedScrollingEnabled="false"
+                android:clipToPadding="false"/>
+
+            <!-- ── EMPTY STATE ── -->
+            <LinearLayout
+                android:id="@+id/layoutEmptyState"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="50dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🔔"
+                    android:textSize="56sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Aucun rappel"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_sub"
+                    android:layout_marginTop="16dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Appuyez sur 🎤 pour ajouter un rappel"
+                    android:textSize="13sp"
+                    android:textColor="@color/text_muted"
+                    android:gravity="center"
+                    android:lineSpacingMultiplier="1.5"
+                    android:layout_marginTop="8dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- ── FAB MICRO ── -->
+    <ImageButton
+        android:id="@+id/fabAjouter"
+        android:layout_width="58dp"
+        android:layout_height="58dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="90dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/mon_micro"
+        android:scaleType="fitCenter"
+        android:padding="8dp"
+        android:contentDescription="Nouveau rappel vocal"
+        android:elevation="8dp"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

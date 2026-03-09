@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- FOND PLEIN ÉCRAN -->
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/bg_home"
+        android:scaleType="centerCrop"
+        android:contentDescription="@null"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- OVERLAY SOMBRE -->
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#44000000"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- HEADER -->
+    <LinearLayout
+        android:id="@+id/layoutHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="&#10022;"
+            android:textColor="#7B6CF6"
+            android:textSize="24sp"
+            android:layout_marginEnd="7dp" />
+
+        <TextView
+            android:id="@+id/tvNomAssistante"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alexandra"
+            android:textColor="#FFFFFF"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.05" />
+    </LinearLayout>
+
+    <!-- TITRE -->
+    <TextView
+        android:id="@+id/tvGreeting"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="14dp"
+        android:text="Bonjour, que puis-je\nfaire pour vous ?"
+        android:textColor="#FFFFFF"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:lineSpacingMultiplier="1.2"
+        app:layout_constraintTop_toBottomOf="@id/layoutHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- BOUTON MICRO -->
+    <FrameLayout
+        android:id="@+id/micContainer"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        app:layout_constraintTop_toBottomOf="@id/tvGreeting"
+        app:layout_constraintBottom_toTopOf="@id/cardZoneInteraction"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <View
+            android:id="@+id/micRingOuter"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_mic_ring_outer" />
+
+        <ImageButton
+            android:id="@+id/btnMicrophone"
+            android:layout_width="88dp"
+            android:layout_height="88dp"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:src="@drawable/mon_micro"
+            android:scaleType="fitCenter"
+            android:elevation="8dp"
+            android:contentDescription="Microphone" />
+    </FrameLayout>
+
+    <!-- ✅ ZONE BAS : glassmorphism container -->
+    <LinearLayout
+        android:id="@+id/cardZoneInteraction"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="14dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/bg_glass_container"
+        android:paddingTop="6dp"
+        android:paddingBottom="8dp"
+        android:elevation="6dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomNav"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- ONDE -->
+        <com.example.myapp.views.WaveformView
+            android:id="@+id/waveformUnique"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="4dp"
+            android:visibility="visible" />
+
+        <!-- TEXTE STATUT -->
+        <TextView
+            android:id="@+id/tvTexteUnique"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="2dp"
+            android:text="Appuyez pour parler..."
+            android:textColor="#AAAACC"
+            android:textSize="13sp"
+            android:gravity="center"
+            android:paddingBottom="4dp" />
+
+        <!-- ZONE SAISIE TEXTE -->
+        <LinearLayout
+            android:id="@+id/layoutSaisieTexte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginHorizontal="14dp"
+            android:layout_marginTop="4dp"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/etCommandeTexte"
+                android:layout_width="0dp"
+                android:layout_height="42dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_input_field"
+                android:hint="Écrivez votre commande..."
+                android:textColorHint="#55AAAACC"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp"
+                android:paddingHorizontal="14dp"
+                android:inputType="text"
+                android:imeOptions="actionSend"
+                android:maxLines="1" />
+
+            <ImageButton
+                android:id="@+id/btnEnvoyerTexte"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_mic_circle"
+                android:src="@android:drawable/ic_menu_send"
+                android:tint="#FFFFFF"
+                android:contentDescription="Envoyer"
+                android:elevation="4dp" />
+        </LinearLayout>
+
+        <!-- SÉPARATEUR -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#33AAAAFF"
+            android:layout_marginTop="4dp"
+            android:layout_marginHorizontal="16dp" />
+
+        <!-- ✅ UN SEUL CADRE pour les 6 raccourcis -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/bg_raccourci_premium"
+            android:paddingHorizontal="4dp"
+            android:paddingVertical="6dp"
+            android:orientation="vertical">
+
+            <!-- LIGNE 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <!-- 1. Message -->
+                <LinearLayout
+                    android:id="@+id/btnRaccourciMessage"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:clickable="true"
+                    android:focusable="true">
+                    <ImageView
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:src="@drawable/ic_raccourci_message"
+                        android:contentDescription="Message" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Message"
+                        android:textColor="#EEFFFFFF"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="4dp"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <!-- Séparateur vertical -->
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="50dp"
+                    android:background="#33AAAAFF" />
+
+                <!-- 2. Notifications -->
+                <LinearLayout
+                    android:id="@+id/btnRaccourciQuestionLibre"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:clickable="true"
+                    android:focusable="true">
+                    <ImageView
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:src="@drawable/ic_raccourci_chat"
+                        android:contentDescription="Q.Libre" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Discussion"
+                        android:textColor="#EEFFFFFF"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="4dp"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <!-- Séparateur vertical -->
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="50dp"
+                    android:background="#33AAAAFF" />
+
+                <!-- 3. Appel -->
+                <LinearLayout
+                    android:id="@+id/btnRaccourciAppel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:clickable="true"
+                    android:focusable="true">
+                    <ImageView
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:src="@drawable/ic_raccourci_appel"
+                        android:contentDescription="Appel" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Appel"
+                        android:textColor="#EEFFFFFF"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="4dp"
+                        android:gravity="center" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- SÉPARATEUR HORIZONTAL entre les 2 lignes -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#33AAAAFF"
+                android:layout_marginHorizontal="8dp" />
+
+            <!-- LIGNE 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <!-- 4. Météo -->
+                <LinearLayout
+                    android:id="@+id/btnRaccourciMeteo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:clickable="true"
+                    android:focusable="true">
+                    <ImageView
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:src="@drawable/ic_raccourci_meteo"
+                        android:contentDescription="Météo" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Météo"
+                        android:textColor="#EEFFFFFF"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="4dp"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <!-- Séparateur vertical -->
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="50dp"
+                    android:background="#33AAAAFF" />
+
+                <!-- 5. Batterie -->
+                <LinearLayout
+                    android:id="@+id/btnRaccourciRappel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:clickable="true"
+                    android:focusable="true">
+                    <ImageView
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:src="@drawable/ic_raccourci_rappel"
+                        android:contentDescription="Batterie" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rappel"
+                        android:textColor="#EEFFFFFF"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="4dp"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <!-- Séparateur vertical -->
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="50dp"
+                    android:background="#33AAAAFF" />
+
+                <!-- 6. Alarme -->
+                <LinearLayout
+                    android:id="@+id/btnRaccourciAlarme"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:clickable="true"
+                    android:focusable="true">
+                    <ImageView
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:src="@drawable/ic_raccourci_alarme"
+                        android:contentDescription="Alarme" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Alarme"
+                        android:textColor="#EEFFFFFF"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="4dp"
+                        android:gravity="center" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- NAVIGATION BAS -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#EE0D0630"
+        app:menu="@menu/menu_bottom_nav"
+        app:itemIconTint="@null"
+        app:itemTextColor="@color/bottom_nav_color"
+        app:labelVisibilityMode="labeled"
+        app:itemActiveIndicatorStyle="@style/Widget.Material3.BottomNavigationView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- PHOTO PROFIL CIRCULAIRE -->
+    <ImageView
+        android:id="@+id/imgNavAvatar"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        android:elevation="10dp"
+        android:background="@null"
+        android:padding="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/bottomNav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="18dp"
+        app:layout_constraintHorizontal_bias="0.94" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

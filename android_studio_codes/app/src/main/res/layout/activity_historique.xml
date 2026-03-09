@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_home">
+
+    <!-- ✅ TITRE -->
+    <TextView
+        android:id="@+id/tvTitleHistorique"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Historique"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="52dp"
+        android:paddingBottom="4dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvSubTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dernières commandes"
+        android:textColor="#BB86FC"
+        android:textSize="13sp"
+        android:letterSpacing="0.1"
+        android:paddingHorizontal="20dp"
+        android:paddingBottom="12dp"
+        app:layout_constraintTop_toBottomOf="@id/tvTitleHistorique"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- ✅ BARRE DE SÉLECTION (apparaît lors d'un long clic) -->
+    <LinearLayout
+        android:id="@+id/barreSelection"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="12dp"
+        android:background="#CC1A1040"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/tvSubTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Bouton Annuler -->
+        <ImageButton
+            android:id="@+id/btnAnnulerSelection"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_close"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Annuler"
+            android:tint="#FFFFFF" />
+
+        <!-- Nombre sélectionnés -->
+        <TextView
+            android:id="@+id/tvNbSelectionnes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="0 sélectionné"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <!-- Bouton Sélectionner tout -->
+        <LinearLayout
+            android:id="@+id/btnSelectionnerTout"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="10dp"
+            android:background="@drawable/bg_btn_selection"
+            android:layout_marginEnd="8dp">
+
+            <TextView
+                android:id="@+id/tvSelectionnerTout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tout sélectionner"
+                android:textColor="#BB86FC"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Bouton Supprimer -->
+        <ImageButton
+            android:id="@+id/btnSupprimerSelection"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_delete"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Supprimer"
+            android:tint="#FF5252"
+            android:enabled="false"
+            android:alpha="0.4" />
+
+    </LinearLayout>
+
+    <!-- ✅ MESSAGE VIDE -->
+    <TextView
+        android:id="@+id/tvHistoriqueVide"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Aucune commande pour l'instant.\nParlez à Alexandra pour commencer !"
+        android:textColor="#AAAACC"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:lineSpacingMultiplier="1.6"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/barreSelection"
+        app:layout_constraintBottom_toTopOf="@id/bottomNav"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ✅ LISTE -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvHistorique"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingHorizontal="16dp"
+        android:paddingBottom="8dp"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toBottomOf="@id/barreSelection"
+        app:layout_constraintBottom_toTopOf="@id/bottomNav"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ✅ BARRE DE NAVIGATION -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#CC0D0630"
+        app:menu="@menu/menu_bottom_nav"
+        app:itemIconTint="@null"
+        app:itemTextColor="@color/bottom_nav_color"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgNavAvatar"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/bottomNav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="0dp"
+        app:layout_constraintHorizontal_bias="0.94" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
