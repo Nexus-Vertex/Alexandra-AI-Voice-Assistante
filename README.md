@@ -21,9 +21,11 @@
 
 ## 💻 Dashboard Screenshots
 
-![Admin](screenshots/dashboard/admin.jpg)
-![User](screenshots/dashboard/user.png)
-![Login](screenshots/dashboard/login.png)
+<img src="Alexandra-AI-Voice-Assistante/screenshots/ dashboard/admin.jpg at main · Nexus-Vertex/Alexandra-AI-Voice-Assistante" width="400">
+
+<img src="https://raw.githubusercontent.com/Nexus-Vertex/Alexandra-AI-Voice-Assistante/main/screenshots/dashboard/user.png" width="400">
+
+<img src="https://raw.githubusercontent.com/Nexus-Vertex/Alexandra-AI-Voice-Assistante/main/screenshots/dashboard/login.png" width="400">
 
 ---
 
