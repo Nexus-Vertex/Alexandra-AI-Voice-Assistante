@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ── Fonds ── -->
+    <color name="bg">#0B0F1A</color>
+    <color name="bg_deep">#07041a</color>
+    <color name="bg_card">#100d2e</color>
+    <color name="bg_card2">#16123a</color>
+
+    <!-- ── Violets ── -->
+    <color name="accent">#7C4DFF</color>
+    <color name="purple_1">#a855f7</color>
+    <color name="purple_2">#7c3aed</color>
+    <color name="purple_3">#4f46e5</color>
+
+    <!-- ── Roses ── -->
+    <color name="pink">#e879f9</color>
+    <color name="pink_soft">#f0abfc</color>
+
+    <!-- ── Textes ── -->
+    <color name="white">#FFFFFF</color>
+    <color name="gray">#9E9E9E</color>
+    <color name="text_main">#e8e0ff</color>
+    <color name="text_sub">#9d8ec7</color>
+    <color name="text_muted">#5a4e7a</color>
+
+    <!-- ── Statuts Rappels ── -->
+    <color name="green_rappel">#34d399</color>
+    <color name="orange_rappel">#fb923c</color>
+    <color name="red_rappel">#f87171</color>
+    <color name="orange">#FF9800</color>
+</resources>

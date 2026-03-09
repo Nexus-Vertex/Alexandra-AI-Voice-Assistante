@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My App</string>
+    <string name="accessibility_service_description">
+    Alexandra a besoin de ce service pour envoyer automatiquement
+    des messages WhatsApp par commande vocale.
+    </string>
+</resources>
