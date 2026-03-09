@@ -72,11 +72,14 @@ Alexandra-AI-Voice-Assistante/
 ├── android_studio_codes/       
 │   ├── app/
 │   │   └── src/main/
-│   │       ├── java/           
+│   │       ├── java/
+│   │       │   └── views/          
 │   │       ├── res/
-│   │       │   ├── layout/     
-│   │       │   ├── drawable/  
-│   │       │   └── values/     
+│   │       │   ├── color/     
+│   │       │   ├── drawable/
+│   │       │   ├── layout/ 
+│   │       │   ├── menu/   
+│   │       │   └── values/      
 │   │       └── AndroidManifest.xml
 │   ├── build.gradle.kts
 │   └── settings.gradle.kts
