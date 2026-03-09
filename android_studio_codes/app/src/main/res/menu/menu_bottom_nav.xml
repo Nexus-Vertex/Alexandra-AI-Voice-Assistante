@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_home"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/nav_historique"
+        android:icon="@drawable/ic_history"
+        android:title="Historique" />
+
+    <item
+        android:id="@+id/nav_autorisations"
+        android:icon="@drawable/ic_shield"
+        android:title="Autorisations" />
+
+    <!-- ✅ On supprime l’icône automatique -->
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@null"
+        android:title="Profil" />
+
+</menu>
