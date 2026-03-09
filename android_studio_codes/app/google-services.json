@@ -1,3 +1,10 @@
+## ⚠️ Security Notice
+This file is secured and personal.
+Each user must provide their own `google-services.json`.
+Do NOT share or reuse someone else's file !
+
+---
+
 ## Setup & Configuration
 
 ### Firebase Setup
@@ -9,3 +16,5 @@ This project requires a `google-services.json` file.
 4. Enter your package name
 5. Download `google-services.json`
 6. Place it in the `/app` folder
+
+⚠️ Never share your `google-services.json` publicly !
