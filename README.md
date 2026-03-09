@@ -9,11 +9,11 @@
 
 ## 📱 App Screenshots
 
-| Home Screen | Chat Screen | Voice Screen |
+| Home page | Histories page | Permissions page |
 |-------------|-------------|--------------|
 | ![Home](screenshots/app/home.png)| ![Chat](screenshots/app/chat.png) | ![Voice](screenshots/app/voice.png) |
 
-| Reminders Screen | Notifications Screen | Profile Screen |
+| Profile page | Login page | Register page |
 |------------------|----------------------|----------------|
 | ![Reminders](screenshots/app/reminders.png) | ![Notifications](screenshots/app/notifications.png) | ![Profile](screenshots/app/profile.png) |
 
