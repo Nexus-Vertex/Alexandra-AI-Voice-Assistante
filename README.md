@@ -21,9 +21,9 @@
 
 ## 💻 Dashboard Screenshots
 
-| Admin Dashboard | User Dashboard | Login Page |
-|-----------------|----------------|------------|
-| ![Admin](https://github.com/Nexus-Vertex/Alexandra-AI-Voice-Assistante/tree/main/screenshots/dashboard/admin.jpg) | ![User](screenshots/dashboard/user.png) | ![Login](screenshots/dashboard/login.png) |
+![Admin](screenshots/dashboard/admin.jpg)
+![User](screenshots/dashboard/user.png)
+![Login](screenshots/dashboard/login.png)
 
 ---
 
