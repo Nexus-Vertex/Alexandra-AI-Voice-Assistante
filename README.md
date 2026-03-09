@@ -11,11 +11,11 @@
 
 | Home page | Histories page | Permissions page |
 |-------------|-------------|--------------|
-| ![Home](screenshots/app/home.png)| ![Chat](screenshots/app/chat.png) | ![Voice](screenshots/app/voice.png) |
+| <img src="https://github.com/Nexus-Vertex/Alexandra-AI-Voice-Assistante/blob/main/screenshots/app/home.jpeg" width="400">| <img src="https://github.com/Nexus-Vertex/Alexandra-AI-Voice-Assistante/blob/main/screenshots/app/histories.jpeg" width="400"> | <img src="https://github.com/Nexus-Vertex/Alexandra-AI-Voice-Assistante/blob/main/screenshots/app/permissions.jpeg" width="400"> |
 
 | Profile page | Login page | Register page |
 |------------------|----------------------|----------------|
-| ![Reminders](screenshots/app/reminders.png) | ![Notifications](screenshots/app/notifications.png) | ![Profile](screenshots/app/profile.png) |
+| <img src="https://github.com/Nexus-Vertex/Alexandra-AI-Voice-Assistante/blob/main/screenshots/%20dashboard/admin.jpg" width="400"> | <img src="https://github.com/Nexus-Vertex/Alexandra-AI-Voice-Assistante/blob/main/screenshots/app/profile.jpeg" width="400"> | <img src="https://github.com/Nexus-Vertex/Alexandra-AI-Voice-Assistante/blob/main/screenshots/app/register.jpeg" width="400"> |
 
 ---
 
