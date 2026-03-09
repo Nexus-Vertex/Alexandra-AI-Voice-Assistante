@@ -1,29 +1,11 @@
-{
-  "project_info": {
-    "project_number": "728890472299",
-    "project_id": "alexandra-4f7af",
-    "storage_bucket": "alexandra-4f7af.firebasestorage.app"
-  },
-  "client": [
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:728890472299:android:22646daa51202865733e2e",
-        "android_client_info": {
-          "package_name": "com.example.myapp"
-        }
-      },
-      "oauth_client": [],
-      "api_key": [
-        {
-          "current_key": "AIzaSyBFMjtZsT7HZMV_k6VX0DBmEK9ovL8Gftg"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": []
-        }
-      }
-    }
-  ],
-  "configuration_version": "1"
-}
+## Setup & Configuration
+
+### Firebase Setup
+This project requires a `google-services.json` file.
+
+1. Go to [Firebase Console](https://console.firebase.google.com)
+2. Create a new project or open existing one
+3. Click on **"Add app"** → Android
+4. Enter your package name
+5. Download `google-services.json`
+6. Place it in the `/app` folder
