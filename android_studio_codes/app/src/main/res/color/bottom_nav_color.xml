@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <!-- res/color/bottom_nav_color.xml -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Couleur quand l'item est sélectionné -->
+    <item android:color="#BB86FC" android:state_checked="true" />
+    <!-- Couleur par défaut (non sélectionné) -->
+    <item android:color="#88AAAACC" />
+</selector>

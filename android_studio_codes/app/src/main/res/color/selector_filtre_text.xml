@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Texte blanc quand le filtre est sélectionné (actif) -->
+    <item android:state_selected="true"  android:color="#FFFFFF"/>
+    <!-- Texte violet doux quand non sélectionné -->
+    <item android:color="#9d8ec7"/>
+</selector>
