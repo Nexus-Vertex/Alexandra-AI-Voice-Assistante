@@ -1,4 +1,4 @@
-# 🤖 Alexandra – AI Voice Assistant
+# 🤖 Alexandra – AI Voice Assistante
 
 ![Alexandra Banner](screenshots/banner.png)
 
