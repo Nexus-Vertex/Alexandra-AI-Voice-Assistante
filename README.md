@@ -9,10 +9,6 @@
 
 ## 📱 App Screenshots
 
-| Home page | Histories page | Profile page | Login page | Register page | Permissions page |
-|-------------|-------------|--------------|------------------|------------------|----------------|
-| <img src="https://github.com/Nexus-Vertex/Alexandra-AI-Voice-Assistante/blob/main/screenshots/app/home.jpeg" width="400">| <img src="https://github.com/Nexus-Vertex/Alexandra-AI-Voice-Assistante/blob/main/screenshots/app/histories.jpeg" width="400"> | <img src="https://github.com/Nexus-Vertex/Alexandra-AI-Voice-Assistante/blob/main/screenshots/app/profile.jpeg" width="400"> | <img src="https://github.com/Nexus-Vertex/Alexandra-AI-Voice-Assistante/blob/main/screenshots/app/login.jpeg" width="400"> | <img src="https://github.com/Nexus-Vertex/Alexandra-AI-Voice-Assistante/blob/main/screenshots/app/register.jpeg" width="400"> | <img src="https://github.com/Nexus-Vertex/Alexandra-AI-Voice-Assistante/blob/main/screenshots/app/permissions.jpeg" width="400">
-
 | Home page | Histories page | Profile page |
 |-------------|-------------|--------------|
 | <img src="https://github.com/Nexus-Vertex/Alexandra-AI-Voice-Assistante/blob/main/screenshots/app/home.jpeg" width="400">| <img src="https://github.com/Nexus-Vertex/Alexandra-AI-Voice-Assistante/blob/main/screenshots/app/histories.jpeg" width="400"> | <img src="https://github.com/Nexus-Vertex/Alexandra-AI-Voice-Assistante/blob/main/screenshots/app/profile.jpeg" width="400"> |
