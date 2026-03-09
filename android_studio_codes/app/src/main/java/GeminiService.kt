@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit
 
 object GeminiService {
 
-    private const val API_KEY = "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"
+    private const val API_KEY = "Your Groq link hier "
     private const val MODEL   = "llama-3.3-70b-versatile"
     private const val URL     = "https://api.groq.com/openai/v1/chat/completions"
 
@@ -364,4 +364,5 @@ data class RappelInfo(
     val heure       : String,
     val date        : String,
     val heureMillis : Long
+
 )
