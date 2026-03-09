@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alexandra — Connexion</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #0a0a0f; --surface: #13131a; --border: #1e1e2e;
+    --accent: #7c6af7; --accent2: #a78bfa; --text: #e8e8f0;
+    --muted: #6b6b80; --error: #f87171; --success: #4ade80; --warning: #fbbf24;
+  }
+  body {
+    font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text);
+    min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    overflow-y: auto; padding: 30px 20px;
+  }
+  .bg-orbs { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+  .orb { position: absolute; border-radius: 50%; filter: blur(80px); animation: float 8s ease-in-out infinite; }
+  .orb1 { width: 400px; height: 400px; background: rgba(124,106,247,0.15); top: -100px; left: -100px; }
+  .orb2 { width: 300px; height: 300px; background: rgba(167,139,250,0.1); bottom: -50px; right: -50px; animation-delay: 3s; }
+  .orb3 { width: 200px; height: 200px; background: rgba(74,222,128,0.08); top: 50%; left: 60%; animation-delay: 5s; }
+  @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-30px); } }
+  .grid-bg {
+    position: fixed; inset: 0; z-index: 0;
+    background-image: linear-gradient(rgba(124,106,247,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(124,106,247,0.04) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+  .container {
+    position: relative; z-index: 1; display: flex; flex-direction: column;
+    align-items: center; width: 100%; max-width: 460px; margin: auto;
+    animation: fadeUp 0.6s ease both;
+  }
+  @keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+  .logo-wrap { display: flex; flex-direction: column; align-items: center; margin-bottom: 28px; }
+  .logo-icon {
+    width: 68px; height: 68px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    border-radius: 20px; display: flex; align-items: center; justify-content: center;
+    font-size: 30px; margin-bottom: 14px; animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100% { box-shadow: 0 0 40px rgba(124,106,247,0.4); } 50% { box-shadow: 0 0 60px rgba(124,106,247,0.7); } }
+  .logo-title {
+    font-family: 'Syne', sans-serif; font-size: 38px; font-weight: 800; letter-spacing: -1px;
+    background: linear-gradient(135deg, #fff 40%, var(--accent2));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .logo-sub { font-size: 13px; color: var(--muted); margin-top: 6px; }
+  .mode-selector { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 16px; width: 100%; }
+  .mode-btn {
+    padding: 14px 8px; border-radius: 14px; border: 1px solid var(--border);
+    background: transparent; color: var(--muted); font-family: 'DM Sans', sans-serif;
+    font-size: 12px; font-weight: 500; cursor: pointer; transition: all 0.2s;
+    display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center;
+  }
+  .mode-btn .mode-icon { font-size: 22px; }
+  .mode-btn.active-user  { border-color: #60a5fa; background: rgba(96,165,250,0.1);  color: #60a5fa; }
+  .mode-btn.active-admin { border-color: var(--warning); background: rgba(251,191,36,0.1); color: var(--warning); }
+  .mode-btn.active-new   { border-color: var(--success); background: rgba(74,222,128,0.1); color: var(--success); }
+  .mode-btn:hover:not([class*="active"]) { border-color: var(--muted); color: var(--text); }
+  .card { width: 100%; background: var(--surface); border: 1px solid var(--border); border-radius: 24px; padding: 32px; transition: border-color 0.3s; }
+  .card.mode-user  { border-color: rgba(96,165,250,0.25); }
+  .card.mode-admin { border-color: rgba(251,191,36,0.25); }
+  .card.mode-new   { border-color: rgba(74,222,128,0.25); }
+  .card-title { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+  .card-desc  { font-size: 13px; color: var(--muted); margin-bottom: 22px; }
+  .panel { display: none; }
+  .panel.active { display: block; }
+  .form-group { margin-bottom: 16px; }
+  label { display: block; font-size: 11px; font-weight: 600; color: var(--muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.8px; }
+  .input-wrap { position: relative; }
+  .input-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 16px; pointer-events: none; }
+  input {
+    width: 100%; background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+    border-radius: 12px; padding: 13px 14px 13px 44px; color: var(--text);
+    font-family: 'DM Sans', sans-serif; font-size: 14px; outline: none; transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(124,106,247,0.15); }
+  input::placeholder { color: var(--muted); }
+  .alert { display: none; border-radius: 10px; padding: 12px 14px; font-size: 13px; margin-bottom: 16px; border: 1px solid; }
+  .alert.error   { background: rgba(248,113,113,0.1); border-color: rgba(248,113,113,0.3); color: var(--error); }
+  .alert.success { background: rgba(74,222,128,0.1);  border-color: rgba(74,222,128,0.3);  color: var(--success); }
+  .alert.show { display: block; }
+  .btn-submit {
+    width: 100%; padding: 15px; border: none; border-radius: 12px;
+    color: #fff; font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700;
+    cursor: pointer; transition: all 0.2s; margin-top: 8px;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+  }
+  .btn-user  { background: linear-gradient(135deg, #3b82f6, #60a5fa); }
+  .btn-admin { background: linear-gradient(135deg, #d97706, #fbbf24); }
+  .btn-new   { background: linear-gradient(135deg, #16a34a, #4ade80); }
+  .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,0.3); }
+  .btn-submit:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
+  .spinner { display: none; width: 18px; height: 18px; border: 2px solid rgba(255,255,255,0.35); border-top-color: #fff; border-radius: 50%; animation: spin 0.8s linear infinite; }
+  .spinner.show { display: block; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .warn-box { background: rgba(251,191,36,0.07); border: 1px solid rgba(251,191,36,0.2); border-radius: 10px; padding: 12px 14px; font-size: 12px; color: var(--warning); margin-bottom: 18px; line-height: 1.7; }
+  .warn-box strong { display: block; margin-bottom: 4px; font-size: 13px; }
+  .secret-info { margin-top: 6px; font-size: 11px; color: var(--muted); padding-left: 4px; }
+  .firebase-badge { margin-top: 18px; display: flex; align-items: center; justify-content: center; gap: 7px; font-size: 12px; color: var(--muted); }
+  .firebase-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent2); animation: blink 1.5s ease-in-out infinite; }
+  .firebase-dot.ready { background: var(--success); }
+  @keyframes blink { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
+</style>
+</head>
+<body>
+<div class="bg-orbs"><div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div></div>
+<div class="grid-bg"></div>
+
+<div class="container">
+  <div class="logo-wrap">
+    <div class="logo-icon">🤖</div>
+    <div class="logo-title">Alexandra</div>
+    <div class="logo-sub">Tableau de bord • Gestion des données</div>
+  </div>
+
+  <div class="mode-selector">
+    <button class="mode-btn active-user" id="btnModeUser" onclick="setMode('user')">
+      <span class="mode-icon">👤</span>Connexion<br>Utilisateur
+    </button>
+    <button class="mode-btn" id="btnModeAdmin" onclick="setMode('admin')">
+      <span class="mode-icon">👑</span>Connexion<br>Admin
+    </button>
+    <button class="mode-btn" id="btnModeNew" onclick="setMode('new')">
+      <span class="mode-icon">➕</span>Créer compte<br>Admin
+    </button>
+  </div>
+
+  <div class="card mode-user" id="mainCard">
+    <div class="alert error"   id="alertError"></div>
+    <div class="alert success" id="alertSuccess"></div>
+
+    <!-- USER LOGIN -->
+    <div class="panel active" id="panelUser">
+      <div class="card-title">👤 Connexion Utilisateur</div>
+      <div class="card-desc">Accédez à votre espace personnel</div>
+      <div class="form-group">
+        <label>Email</label>
+        <div class="input-wrap"><span class="input-icon">✉️</span><input type="email" id="userEmail" placeholder="votre@email.com" /></div>
+      </div>
+      <div class="form-group">
+        <label>Mot de passe</label>
+        <div class="input-wrap"><span class="input-icon">🔒</span><input type="password" id="userPassword" placeholder="••••••••" /></div>
+      </div>
+      <button class="btn-submit btn-user" id="loginBtn" onclick="loginUser()">
+        <span id="loginBtnText">Se connecter →</span><div class="spinner" id="loginSpinner"></div>
+      </button>
+    </div>
+
+    <!-- ADMIN LOGIN -->
+    <div class="panel" id="panelAdmin">
+      <div class="card-title">👑 Connexion Administrateur</div>
+      <div class="card-desc">Accès complet à tous les comptes</div>
+      <div class="form-group">
+        <label>Email Admin</label>
+        <div class="input-wrap"><span class="input-icon">✉️</span><input type="email" id="adminEmail" placeholder="admin@email.com" /></div>
+      </div>
+      <div class="form-group">
+        <label>Mot de passe</label>
+        <div class="input-wrap"><span class="input-icon">🔒</span><input type="password" id="adminPassword" placeholder="••••••••" /></div>
+      </div>
+      <button class="btn-submit btn-admin" id="adminBtn" onclick="loginAdmin()">
+        <span id="adminBtnText">Accès Admin →</span><div class="spinner" id="adminSpinner"></div>
+      </button>
+    </div>
+
+    <!-- CREATE ADMIN -->
+    <div class="panel" id="panelNew">
+      <div class="card-title">➕ Créer compte Admin</div>
+      <div class="card-desc">Enregistrer un nouvel administrateur</div>
+      <div class="warn-box"><strong>⚠️ Compte Administrateur</strong>Ce compte aura accès à TOUS les utilisateurs et données.</div>
+      <div class="form-group">
+        <label>Nom complet</label>
+        <div class="input-wrap"><span class="input-icon">🧑</span><input type="text" id="newName" placeholder="Votre nom complet" /></div>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <div class="input-wrap"><span class="input-icon">✉️</span><input type="email" id="newEmail" placeholder="admin@email.com" /></div>
+      </div>
+      <div class="form-group">
+        <label>Mot de passe (min. 6 caractères)</label>
+        <div class="input-wrap"><span class="input-icon">🔒</span><input type="password" id="newPassword" placeholder="Mot de passe fort" /></div>
+      </div>
+      <div class="form-group">
+        <label>Confirmer mot de passe</label>
+        <div class="input-wrap"><span class="input-icon">🔑</span><input type="password" id="newPasswordConfirm" placeholder="Répétez le mot de passe" /></div>
+      </div>
+      <div class="form-group">
+        <label>Code secret Admin</label>
+        <div class="input-wrap"><span class="input-icon">🛡️</span><input type="password" id="secretCode" placeholder="Code secret" /></div>
+        <div class="secret-info">💡 Code : 123456</div>
+      </div>
+      <button class="btn-submit btn-new" id="newBtn" onclick="createAdmin()">
+        <span id="newBtnText">Créer le compte Admin →</span><div class="spinner" id="newSpinner"></div>
+      </button>
+    </div>
+  </div>
+
+  <div class="firebase-badge">
+    <div class="firebase-dot" id="fbDot"></div>
+    <span id="fbStatus">Connexion Firebase...</span>
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+<script>
+  firebase.initializeApp({
+    apiKey: "AIzaSyDvQHwWit_ZS4sGegmwVyiIOC2syTV7FJA",
+    authDomain: "alexandra-4f7af.firebaseapp.com",
+    projectId: "alexandra-4f7af",
+    storageBucket: "alexandra-4f7af.firebasestorage.app",
+    messagingSenderId: "728890472299",
+    appId: "1:728890472299:web:1bf25660c1f8cb97733e2e"
+  });
+  const auth = firebase.auth();
+  const db   = firebase.firestore();
+  const ADMIN_SECRET_CODE = "123456";
+  let currentMode = 'user';
+
+  auth.onAuthStateChanged(async user => {
+    document.getElementById('fbDot').classList.add('ready');
+    document.getElementById('fbStatus').textContent = '🔥 Firebase connecté';
+    if (user) {
+      const adminDoc = await db.collection('admins').doc(user.uid).get();
+      window.location.href = adminDoc.exists ? 'dashboard-admin.html' : 'dashboard-user.html';
+    }
+  });
+
+  function setMode(mode) {
+    currentMode = mode;
+    clearAlerts();
+    ['User','Admin','New'].forEach(m => document.getElementById(`btnMode${m}`).className = 'mode-btn');
+    document.getElementById(`btnMode${mode.charAt(0).toUpperCase()+mode.slice(1)}`).classList.add(`active-${mode}`);
+    document.getElementById('mainCard').className = `card mode-${mode}`;
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    document.getElementById(`panel${mode.charAt(0).toUpperCase()+mode.slice(1)}`).classList.add('active');
+  }
+
+  const firebaseErrors = {
+    'auth/user-not-found': '❌ Aucun compte trouvé avec cet email',
+    'auth/wrong-password': '❌ Mot de passe incorrect',
+    'auth/invalid-email': '❌ Email invalide',
+    'auth/too-many-requests': '⚠️ Trop de tentatives. Réessayez plus tard',
+    'auth/invalid-credential': '❌ Email ou mot de passe incorrect',
+    'auth/email-already-in-use': '❌ Cet email est déjà utilisé',
+    'auth/weak-password': '❌ Mot de passe trop faible (min. 6 caractères)',
+  };
+
+  function showError(msg) {
+    const el = document.getElementById('alertError');
+    el.textContent = msg; el.classList.add('show');
+    document.getElementById('alertSuccess').classList.remove('show');
+  }
+  function showSuccess(msg) {
+    const el = document.getElementById('alertSuccess');
+    el.textContent = msg; el.classList.add('show');
+    document.getElementById('alertError').classList.remove('show');
+  }
+  function clearAlerts() {
+    document.getElementById('alertError').classList.remove('show');
+    document.getElementById('alertSuccess').classList.remove('show');
+  }
+  function setLoading(btnId, spinnerId, textId, loading, text) {
+    document.getElementById(btnId).disabled = loading;
+    document.getElementById(spinnerId).classList.toggle('show', loading);
+    document.getElementById(textId).textContent = loading ? 'Chargement...' : text;
+  }
+
+  async function loginUser() {
+    const email = document.getElementById('userEmail').value.trim();
+    const pass  = document.getElementById('userPassword').value;
+    clearAlerts();
+    if (!email || !pass) { showError('⚠️ Remplissez tous les champs'); return; }
+    setLoading('loginBtn','loginSpinner','loginBtnText', true, 'Se connecter →');
+    try {
+      const r = await auth.signInWithEmailAndPassword(email, pass);
+      // Vérifier si c'est un admin
+      const adminDoc = await db.collection('admins').doc(r.user.uid).get();
+      if (adminDoc.exists) {
+        showError('❌ Ce compte est un Admin. Utilisez "Connexion Admin"');
+        await auth.signOut();
+        setLoading('loginBtn','loginSpinner','loginBtnText', false, 'Se connecter →');
+        return;
+      }
+      saveSession(r.user, 'user');
+      showSuccess('✅ Bienvenue ! Redirection...');
+      setTimeout(() => window.location.href = 'dashboard-user.html', 1000);
+    } catch(e) {
+      setLoading('loginBtn','loginSpinner','loginBtnText', false, 'Se connecter →');
+      showError(firebaseErrors[e.code] || '❌ ' + e.message);
+    }
+  }
+
+  async function loginAdmin() {
+    const email = document.getElementById('adminEmail').value.trim();
+    const pass  = document.getElementById('adminPassword').value;
+    clearAlerts();
+    if (!email || !pass) { showError('⚠️ Remplissez tous les champs'); return; }
+    setLoading('adminBtn','adminSpinner','adminBtnText', true, 'Accès Admin →');
+    try {
+      const r = await auth.signInWithEmailAndPassword(email, pass);
+      const adminDoc = await db.collection('admins').doc(r.user.uid).get();
+      if (!adminDoc.exists) {
+        await auth.signOut();
+        setLoading('adminBtn','adminSpinner','adminBtnText', false, 'Accès Admin →');
+        showError('❌ Ce compte n\'est pas un administrateur');
+        return;
+      }
+      saveSession(r.user, 'admin');
+      showSuccess('✅ Accès Admin ! Redirection...');
+      setTimeout(() => window.location.href = 'dashboard-admin.html', 1000);
+    } catch(e) {
+      setLoading('adminBtn','adminSpinner','adminBtnText', false, 'Accès Admin →');
+      showError(firebaseErrors[e.code] || '❌ ' + e.message);
+    }
+  }
+
+  async function createAdmin() {
+    const name    = document.getElementById('newName').value.trim();
+    const email   = document.getElementById('newEmail').value.trim();
+    const pass    = document.getElementById('newPassword').value;
+    const confirm = document.getElementById('newPasswordConfirm').value;
+    const secret  = document.getElementById('secretCode').value.trim();
+    clearAlerts();
+    if (!name||!email||!pass||!confirm||!secret) { showError('⚠️ Remplissez tous les champs'); return; }
+    if (pass !== confirm) { showError('❌ Les mots de passe ne correspondent pas'); return; }
+    if (pass.length < 6)  { showError('❌ Mot de passe trop court (min. 6 caractères)'); return; }
+    if (secret !== ADMIN_SECRET_CODE) { showError('❌ Code secret incorrect'); return; }
+    setLoading('newBtn','newSpinner','newBtnText', true, 'Créer le compte Admin →');
+    try {
+      const r = await auth.createUserWithEmailAndPassword(email, pass);
+      await r.user.updateProfile({ displayName: name });
+      await db.collection('admins').doc(r.user.uid).set({
+        name, email, role: 'admin',
+        createdAt: firebase.firestore.FieldValue.serverTimestamp()
+      });
+      saveSession(r.user, 'admin', name);
+      showSuccess(`✅ Compte Admin "${name}" créé ! Redirection...`);
+      setTimeout(() => window.location.href = 'dashboard-admin.html', 1500);
+    } catch(e) {
+      setLoading('newBtn','newSpinner','newBtnText', false, 'Créer le compte Admin →');
+      showError(firebaseErrors[e.code] || '❌ ' + e.message);
+    }
+  }
+
+  function saveSession(user, role, customName) {
+    localStorage.setItem('alexandra_user', JSON.stringify({
+      email: user.email, uid: user.uid,
+      name: customName || user.displayName || user.email.split('@')[0],
+      role
+    }));
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Enter') return;
+    if (currentMode === 'user')  loginUser();
+    if (currentMode === 'admin') loginAdmin();
+    if (currentMode === 'new')   createAdmin();
+  });
+</script>
+</body>
+</html>
