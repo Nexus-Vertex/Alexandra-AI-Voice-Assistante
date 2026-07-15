@@ -1,4 +1,4 @@
-# 🤖 Alexandra – AI Voice Assistante
+#  Alexandra – AI Voice Assistante
 
 ![Alexandra Banner](https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,100:2E4057&height=200&section=header&text=Alexandra%20AI%20Voice%20Assistant&fontSize=40&fontColor=FFFFFF&animation=fadeIn)
 
@@ -7,7 +7,7 @@
 
 ---
 
-## 📱 App Screenshots
+##  App Screenshots
 
 | Home page | Histories page | Profile page |
 |-------------|-------------|--------------|
