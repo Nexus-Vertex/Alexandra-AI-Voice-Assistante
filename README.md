@@ -136,7 +136,6 @@ git clone https://github.com/Nexus-Vertex/Alexandra-AI-Voice-Assistante.git
 
 ##  Author
 
-**Leila El Tousy**
 - GitHub : [@Nexus-Vertex](https://github.com/Nexus-Vertex)
 - Email : leilaeltousy@gmail.com
 
