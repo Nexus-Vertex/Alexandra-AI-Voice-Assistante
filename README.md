@@ -19,7 +19,7 @@
 
 ---
 
-## 💻 Dashboard Screenshots
+##  Dashboard Screenshots
 
 | Admin Dashboard | User Dashboard | Login Page |
 |-----------------|----------------|------------|
@@ -27,7 +27,7 @@
 
 ---
 
-## 📖 Description
+##  Description
 
 **Alexandra** is an intelligent AI-powered voice assistant designed to make daily life easier.
 It combines voice recognition, AI chat, reminders and notifications in one powerful app.
@@ -35,20 +35,20 @@ The project also includes a web dashboard for admin and user management.
 
 ---
 
-## ✨ Features
+##  Features
 
-### 📱 Mobile App
-- 🎙️ **Voice Recognition** – Talk to Alexandra naturally
-- 🤖 **AI Chat** – Intelligent responses powered by OpenAI API
-- ⏰ **Reminders & Tasks** – Never forget important events
-- 🔔 **Smart Notifications** – Get notified at the right time
-- 👤 **User Profile** – Personalized experience
+###  Mobile App
+-  **Voice Recognition** – Talk to Alexandra naturally
+-  **AI Chat** – Intelligent responses powered by OpenAI API
+-  **Reminders & Tasks** – Never forget important events
+-  **Smart Notifications** – Get notified at the right time
+-  **User Profile** – Personalized experience
 
-### 💻 Web Dashboard
-- 👥 **User Management** – Add, edit and delete users
-- 📊 **Statistics & Analytics** – Monitor app usage
-- 🔐 **Secure Login** – Protected admin access
-- 📋 **Activity Logs** – Track all user actions
+###  Web Dashboard
+-  **User Management** – Add, edit and delete users
+-  **Statistics & Analytics** – Monitor app usage
+-  **Secure Login** – Protected admin access
+-  **Activity Logs** – Track all user actions
 
 ---
 
@@ -104,7 +104,7 @@ Alexandra-AI-Voice-Assistante/
 This project requires a `google-services.json` file which is **personal and secured**.
 Each user must provide their own file. Do NOT share or reuse someone else's file !
 
-### 🔥 Firebase Setup
+###  Firebase Setup
 1. Go to [Firebase Console](https://console.firebase.google.com)
 2. Create a new project or open existing one
 3. Click on **"Add app"** → Android
@@ -114,7 +114,7 @@ Each user must provide their own file. Do NOT share or reuse someone else's file
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 - Android Studio (latest version)
@@ -134,7 +134,7 @@ git clone https://github.com/Nexus-Vertex/Alexandra-AI-Voice-Assistante.git
 
 ---
 
-## 👩‍💻 Author
+##  Author
 
 **Leila El Tousy**
 - GitHub : [@Nexus-Vertex](https://github.com/Nexus-Vertex)
@@ -142,7 +142,7 @@ git clone https://github.com/Nexus-Vertex/Alexandra-AI-Voice-Assistante.git
 
 ---
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
 
