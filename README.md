@@ -21,8 +21,6 @@
 - [Défis techniques et apprentissages](#défis-techniques-et-apprentissages)
 - [Technologies](#technologies)
 - [Structure du projet](#structure-du-projet)
-- [Installation](#installation)
-- [Roadmap](#roadmap)
 - [Auteur](#auteur)
 - [Licence](#licence)
 
@@ -150,50 +148,6 @@ Alexandra-AI-Voice-Assistante/
 ├── README.md
 └── LICENSE
 ```
-
----
-
-## Installation
-
-### Prérequis
-- Android Studio (dernière version)
-- Java 11 ou supérieur
-- Compte Firebase
-- Clé API OpenAI
-
-### Étapes
-
-1. Cloner le dépôt
-   ```bash
-   git clone https://github.com/Nexus-Vertex/Alexandra-AI-Voice-Assistante.git
-   ```
-
-2. Ouvrir `android_studio_codes/` dans Android Studio
-
-3. Configurer Firebase :
-   - Aller sur [Firebase Console](https://console.firebase.google.com)
-   - Créer un nouveau projet (ou ouvrir un projet existant)
-   - Cliquer sur **"Ajouter une application"** → Android
-   - Renseigner le nom du package
-   - Télécharger `google-services.json`
-   - Placer le fichier dans `/android_studio_codes/app`
-
-   > ⚠️ Ce fichier est personnel et sensible — ne jamais le committer ni le partager. Ajoutez-le à votre `.gitignore`.
-
-4. Configurer la clé API OpenAI :
-   - Ne pas l'écrire en dur dans le code source
-   - La placer dans un fichier `local.properties` (non versionné) ou une variable d'environnement, puis la lire depuis `BuildConfig`
-
-5. Compiler et lancer l'application
-
----
-
-## Roadmap
-
-- [ ] Ajouter des tests unitaires (JUnit) sur les fonctions clés de reconnaissance vocale
-- [ ] Ajouter un pipeline CI (GitHub Actions) pour la compilation automatique
-- [ ] Support multilingue de la reconnaissance vocale
-- [ ] Mode hors-ligne partiel pour les rappels
 
 ---
 
