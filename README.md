@@ -2,8 +2,8 @@
 
 ![Alexandra Banner](https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,100:2E4057&height=200&section=header&text=Alexandra%20AI%20Voice%20Assistant&fontSize=40&fontColor=FFFFFF&animation=fadeIn)
 
-> Un assistant vocal intelligent développé avec Kotlin, Java et l'API OpenAI.
-> Projet de Fin d'Études (PFE) – 2026
+> An intelligent voice assistant built with Kotlin, Java, and the OpenAI API.
+> Final Year Project (PFE) – 2026
 
 [![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat&logo=kotlin&logoColor=white)](https://kotlinlang.org)
 [![Java](https://img.shields.io/badge/Java-ED8B00?style=flat&logo=openjdk&logoColor=white)](https://www.java.com)
@@ -12,111 +12,111 @@
 
 ---
 
-## Table des matières
+## Table of Contents
 
-- [Aperçu](#aperçu)
-- [Démo](#démo)
-- [Fonctionnalités](#fonctionnalités)
+- [Overview](#overview)
+- [Demo](#demo)
+- [Features](#features)
 - [Architecture](#architecture)
-- [Défis techniques et apprentissages](#défis-techniques-et-apprentissages)
+- [Technical Challenges and Learnings](#technical-challenges-and-learnings)
 - [Technologies](#technologies)
-- [Structure du projet](#structure-du-projet)
-- [Auteur](#auteur)
-- [Licence](#licence)
+- [Project Structure](#project-structure)
+- [Author](#author)
+- [License](#license)
 
 ---
 
-## Aperçu
+## Overview
 
-**Alexandra** est un assistant vocal intelligent conçu pour simplifier les tâches du quotidien : reconnaissance vocale, conversation avec une IA, rappels et notifications, le tout dans une application mobile accompagnée d'un tableau de bord web pour la gestion des utilisateurs.
+**Alexandra** is an intelligent voice assistant designed to simplify everyday tasks: voice recognition, conversation with an AI, reminders and notifications, all within a mobile application paired with a web dashboard for user management.
 
-Ce projet a été pensé comme une application complète de bout en bout : app mobile (Kotlin/Java), backend/authentification (Firebase), intelligence conversationnelle (API OpenAI) et interface d'administration (HTML/CSS/JS).
+This project was designed as a complete end-to-end application: mobile app (Kotlin/Java), backend/authentication (Firebase), conversational intelligence (OpenAI API), and an admin interface (HTML/CSS/JS).
 
 ---
 
-## Démo
+## Demo
 
-### Captures d'écran — Application mobile
+### Screenshots — Mobile Application
 
-| Accueil | Historique | Profil |
+| Home | History | Profile |
 |---------|------------|--------|
 | <img src="https://github.com/Nexus-Vertex/Alexandra-AI-Voice-Assistante/blob/main/screenshots/App/home.jpeg" width="250"> | <img src="https://github.com/Nexus-Vertex/Alexandra-AI-Voice-Assistante/blob/main/screenshots/App/histories.jpeg" width="250"> | <img src="https://github.com/Nexus-Vertex/Alexandra-AI-Voice-Assistante/blob/main/screenshots/App/profile.jpeg" width="250"> |
 
-| Connexion | Inscription | Permissions |
+| Login | Sign up | Permissions |
 |-----------|-------------|-------------|
 | <img src="https://github.com/Nexus-Vertex/Alexandra-AI-Voice-Assistante/blob/main/screenshots/App/login.jpeg" width="250"> | <img src="https://github.com/Nexus-Vertex/Alexandra-AI-Voice-Assistante/blob/main/screenshots/App/register.jpeg" width="250"> | <img src="https://github.com/Nexus-Vertex/Alexandra-AI-Voice-Assistante/blob/main/screenshots/App/permissions.jpeg" width="250"> |
 
-### Captures d'écran — Tableau de bord web
+### Screenshots — Web Dashboard
 
-| Dashboard admin | Dashboard utilisateur | Connexion |
+| Admin dashboard | User dashboard | Login |
 |-----------------|------------------------|-----------|
 | <img src="https://github.com/Nexus-Vertex/Alexandra-AI-Voice-Assistante/blob/main/screenshots/%20dashboard/admin.jpeg" width="250"> | <img src="https://github.com/Nexus-Vertex/Alexandra-AI-Voice-Assistante/blob/main/screenshots/%20dashboard/user.png" width="250"> | <img src="https://github.com/Nexus-Vertex/Alexandra-AI-Voice-Assistante/blob/main/screenshots/%20dashboard/login.jpeg" width="250"> |
 
 ---
 
-## Fonctionnalités
+## Features
 
-### Application mobile
-- **Reconnaissance vocale** — interaction naturelle par la voix
-- **Chat IA** — réponses intelligentes générées via l'API OpenAI
-- **Rappels et tâches** — pour ne rien oublier
-- **Notifications intelligentes** — alertes au bon moment
-- **Profil utilisateur** — expérience personnalisée
+### Mobile Application
+- **Voice recognition** — natural interaction through speech
+- **AI Chat** — intelligent responses generated via the OpenAI API
+- **Reminders and tasks** — never forget anything
+- **Smart notifications** — alerts at the right moment
+- **User profile** — personalized experience
 
-### Tableau de bord web
-- **Gestion des utilisateurs** — ajout, modification, suppression
-- **Statistiques et analyses** — suivi de l'utilisation de l'app
-- **Connexion sécurisée** — accès administrateur protégé
-- **Journal d'activité** — traçabilité des actions utilisateurs
+### Web Dashboard
+- **User management** — add, edit, delete
+- **Statistics and analytics** — app usage tracking
+- **Secure login** — protected admin access
+- **Activity log** — traceability of user actions
 
 ---
 
 ## Architecture
 
 ```
-   🎙️ Voix utilisateur
+   🎙️ User voice
         │
         ▼
  SpeechRecognizer (Android)
         │
         ▼
-   Texte transcrit
+   Transcribed text
         │
         ▼
-   Appel API OpenAI  ──────► Firebase (auth + historique)
+   OpenAI API call  ──────► Firebase (auth + history)
         │
         ▼
-   Réponse générée
+   Generated response
         │
         ▼
-   Synthèse vocale (TTS) + affichage dans l'app
+   Text-to-speech (TTS) + display in the app
 ```
 
 ---
 
-## Défis techniques et apprentissages
+## Technical Challenges and Learnings
 
-- **Synchronisation temps réel** : faire cohabiter la reconnaissance vocale continue avec les appels réseau vers l'API OpenAI sans bloquer l'interface utilisateur.
-- **Gestion de la latence de l'API** : affichage d'un retour visuel pendant l'attente de la réponse IA pour éviter que l'utilisateur pense l'application figée.
-- **Cohérence Kotlin/Java** : cohabitation des deux langages au sein du projet, entre modules historiques et nouveaux développements.
-- **Sécurité des clés API** : la clé OpenAI et le fichier `google-services.json` sont exclus du dépôt et gérés localement pour éviter toute fuite.
+- **Real-time synchronization**: making continuous voice recognition work alongside network calls to the OpenAI API without blocking the user interface.
+- **Handling API latency**: displaying visual feedback while waiting for the AI's response so the user doesn't think the app has frozen.
+- **Kotlin/Java consistency**: managing the coexistence of both languages within the project, between legacy modules and newer development.
+- **API key security**: the OpenAI key and the `google-services.json` file are excluded from the repository and managed locally to prevent any leaks.
 
 ---
 
 ## Technologies
 
-| Technologie | Usage |
+| Technology | Usage |
 |-------------|-------|
-| Kotlin | Développement principal de l'application |
-| Java | Logique backend / modules existants |
-| API OpenAI | Génération des réponses conversationnelles |
-| Firebase | Base de données et authentification |
-| HTML/CSS | Pages du tableau de bord |
-| JavaScript | Interactions du tableau de bord |
+| Kotlin | Main application development |
+| Java | Backend logic / legacy modules |
+| OpenAI API | Generating conversational responses |
+| Firebase | Database and authentication |
+| HTML/CSS | Dashboard pages |
+| JavaScript | Dashboard interactions |
 
 ---
 
-## Structure du projet
+## Project Structure
 
 ```
 Alexandra-AI-Voice-Assistante/
@@ -151,17 +151,17 @@ Alexandra-AI-Voice-Assistante/
 
 ---
 
-## Auteur
+## Author
 
-- GitHub : [@Nexus-Vertex](https://github.com/Nexus-Vertex)
-- Contact : via [LinkedIn](#)
-
----
-
-## Licence
-
-Ce projet est distribué sous licence MIT – voir le fichier [LICENSE](LICENSE) pour plus de détails.
+- GitHub: [@Nexus-Vertex](https://github.com/Nexus-Vertex)
+- Contact: via [LinkedIn](#)
 
 ---
 
-⭐ Si ce projet vous plaît, n'hésitez pas à lui laisser une étoile !
+## License
+
+This project is distributed under the MIT License – see the [LICENSE](LICENSE) file for more details.
+
+---
+
+⭐ If you like this project, feel free to leave it a star!
