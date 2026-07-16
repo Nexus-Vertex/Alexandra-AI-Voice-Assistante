@@ -154,7 +154,7 @@ Alexandra-AI-Voice-Assistante/
 ## Author
 
 - GitHub: [@Nexus-Vertex](https://github.com/Nexus-Vertex)
-- Contact: via [LinkedIn](#)
+- Contact: via [Email](https://mail.google.com/mail/?view=cm&fs=1&to=leilaeltousy@gmail.com)
 
 ---
 
