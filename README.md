@@ -38,11 +38,6 @@ Ce projet a été pensé comme une application complète de bout en bout : app m
 
 ## Démo
 
-<!-- Remplacez ce placeholder par un GIF ou une courte vidéo montrant une interaction vocale réelle -->
-<!-- Un gif vaut mille captures d'écran statiques pour une app de reconnaissance vocale -->
-
-**[À ajouter : GIF de 10-15 secondes montrant "je parle → Alexandra répond"]**
-
 ### Captures d'écran — Application mobile
 
 | Accueil | Historique | Profil |
@@ -58,8 +53,6 @@ Ce projet a été pensé comme une application complète de bout en bout : app m
 | Dashboard admin | Dashboard utilisateur | Connexion |
 |-----------------|------------------------|-----------|
 | <img src="https://github.com/Nexus-Vertex/Alexandra-AI-Voice-Assistante/blob/main/screenshots/dashboard/admin.jpeg" width="250"> | <img src="https://github.com/Nexus-Vertex/Alexandra-AI-Voice-Assistante/blob/main/screenshots/dashboard/user.png" width="250"> | <img src="https://github.com/Nexus-Vertex/Alexandra-AI-Voice-Assistante/blob/main/screenshots/dashboard/login.jpeg" width="250"> |
-
-> Note : les chemins d'images ont été uniformisés (`dashboard/` sans espace ni majuscule) — vérifiez que les dossiers réels du dépôt correspondent.
 
 ---
 
@@ -101,24 +94,14 @@ Ce projet a été pensé comme une application complète de bout en bout : app m
    Synthèse vocale (TTS) + affichage dans l'app
 ```
 
-<!-- Remplacez ce schéma par le vôtre s'il diffère de l'implémentation réelle -->
-<!-- Précisez ici : bibliothèque de reconnaissance vocale utilisée, gestion de l'asynchronisme (coroutines ?), format d'échange avec l'API -->
-
 ---
 
 ## Défis techniques et apprentissages
 
-<!--
-Cette section est la plus importante pour un recruteur ou un jury de PFE.
-Remplacez les exemples ci-dessous par vos propres défis réels. Soyez précis et honnête :
-le but n'est pas de paraître parfait, mais de montrer une réflexion d'ingénieur.
--->
-
-- **Synchronisation temps réel** : faire cohabiter la reconnaissance vocale continue avec les appels réseau vers l'API OpenAI sans bloquer l'interface utilisateur. *(Précisez votre solution : coroutines Kotlin, threads, callbacks ?)*
-- **Gestion de la latence de l'API** : afficher un retour visuel pendant l'attente de la réponse IA pour éviter que l'utilisateur pense l'app figée.
-- **Cohérence Kotlin/Java** : le projet mélange les deux langages — *expliquez pourquoi (ex. modules hérités en Java, nouveau code en Kotlin) ou indiquez un plan de migration complète vers Kotlin.*
-- **Sécurité des clés API** : la clé OpenAI et le fichier `google-services.json` ne doivent jamais être commit dans le dépôt — *précisez comment vous les gérez (variables d'environnement, `local.properties`, etc.)*
-- **Ce que j'ai appris** : *(1-2 phrases sur une compétence acquise — architecture Android, gestion d'API tierces, Firebase, etc.)*
+- **Synchronisation temps réel** : faire cohabiter la reconnaissance vocale continue avec les appels réseau vers l'API OpenAI sans bloquer l'interface utilisateur.
+- **Gestion de la latence de l'API** : affichage d'un retour visuel pendant l'attente de la réponse IA pour éviter que l'utilisateur pense l'application figée.
+- **Cohérence Kotlin/Java** : cohabitation des deux langages au sein du projet, entre modules historiques et nouveaux développements.
+- **Sécurité des clés API** : la clé OpenAI et le fichier `google-services.json` sont exclus du dépôt et gérés localement pour éviter toute fuite.
 
 ---
 
@@ -217,13 +200,13 @@ Alexandra-AI-Voice-Assistante/
 ## Auteur
 
 - GitHub : [@Nexus-Vertex](https://github.com/Nexus-Vertex)
-- Contact : via [LinkedIn](#) <!-- Remplacez par votre lien LinkedIn plutôt que l'email en clair -->
+- Contact : via [LinkedIn](#)
 
 ---
 
 ## Licence
 
-Ce projet est distribué sous licence MIT — voir le fichier [LICENSE](LICENSE) pour plus de détails.
+Ce projet est distribué sous licence MIT – voir le fichier [LICENSE](LICENSE) pour plus de détails.
 
 ---
 
