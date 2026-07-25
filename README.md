@@ -27,7 +27,7 @@
 ---
 
 ## Overview
-
+ MODIFICATION
 **Alexandra** is an intelligent voice assistant designed to simplify everyday tasks: voice recognition, conversation with an AI, reminders and notifications, all within a mobile application paired with a web dashboard for user management.
 
 This project was designed as a complete end-to-end application: mobile app (Kotlin/Java), backend/authentication (Firebase), conversational intelligence (OpenAI API), and an admin interface (HTML/CSS/JS).
