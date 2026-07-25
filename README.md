@@ -27,6 +27,7 @@
 ---
 
 ## Overview
+✨ Updated project description.
 
 **Alexandra** is an intelligent voice assistant designed to simplify everyday tasks: voice recognition, conversation with an AI, reminders and notifications, all within a mobile application paired with a web dashboard for user management.
 
